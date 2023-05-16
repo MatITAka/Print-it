@@ -104,6 +104,38 @@ header {
 	background-color: var(--secondary-color);
 }
 
+.menu{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color:lightcyan;
+	gap: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-family: 'Roboto';
+}
+.search-domain{
+	width: 400px;
+	height: 30px;
+	border-width: 0;
+	
+}
+
+
+
+form{
+	border-bottom: 2px solid grey;
+	
+}
+
+.header_icon{
+
+	display: flex;
+	flex-direction: row;
+	gap:30px;
+	margin-left: -70px;
+	
+}
 #banner {
 	display: flex;
 	flex-direction: column;
@@ -125,12 +157,18 @@ header {
 /* Gestion des fleches du carrousel */
 #banner .arrow {
 	position: absolute;
+	
 }
-#banner .arrow_left {
-	left: 10px;
+#banner .arrow_left  {
+	right: 550px;
+	position: absolute;
+	
+	
 }
-#banner .arrow_right {
-	right: 10px;
+#banner .arrow_right  {
+	left: 550px;
+	position: absolute;
+	
 }
 /* Gestion des points du carrousel */
 .dots {
