@@ -43,7 +43,7 @@ const precedent = () => {
 const arrowLeft= document.querySelector(".arrow_left")
 const arrowRight= document.querySelector(".arrow_right")
 const bannerText = document.querySelector('#banner > p');
-const DotSlide = document.querySelector(".dot")
+// const DotSlide = document.querySelector(".dots")
 
 
 
@@ -52,6 +52,7 @@ const DotSlide = document.querySelector(".dot")
  	precedent();
  	SlideImg.src= "./assets/images/slideshow/" + slides[i].image;
  	bannerText.innerHTML = slides[i].tagLine;
+	Dot()
 	 
 	
  })
@@ -61,10 +62,33 @@ const DotSlide = document.querySelector(".dot")
  	suivant()
  	SlideImg.src="./assets/images/slideshow/" + slides[i].image;
  	bannerText.innerHTML = slides[i].tagLine;
-
+	Dot()
+	
 })
 
+function Dot() {
+	
+	let i=0
 
+		DotSlide = document.querySelector(".dot");
+		DotSlide.classList.add("dot_selected");
+	
+
+	if(i+1) {
+		suivant()
+		DotSlide.classList.add("dot_selected");
+	}
+	
+
+	if (i-1) {
+		precedent()
+		DotSlide.classList.add("dot_selected")
+	}
+	
+	
+	
+	
+}
 
 
 
