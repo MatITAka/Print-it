@@ -43,7 +43,7 @@ const precedent = () => {
 const arrowLeft= document.querySelector(".arrow_left")
 const arrowRight= document.querySelector(".arrow_right")
 const bannerText = document.querySelector('#banner > p');
-// const DotSlide = document.querySelector(".dots")
+const dots = document.querySelector(".dots")
 
 
 
@@ -52,8 +52,7 @@ const bannerText = document.querySelector('#banner > p');
  	precedent();
  	SlideImg.src= "./assets/images/slideshow/" + slides[i].image;
  	bannerText.innerHTML = slides[i].tagLine;
-	Dot()
-	 
+	changeSlide(i)
 	
  })
 
@@ -62,37 +61,25 @@ const bannerText = document.querySelector('#banner > p');
  	suivant()
  	SlideImg.src="./assets/images/slideshow/" + slides[i].image;
  	bannerText.innerHTML = slides[i].tagLine;
-	Dot()
-	
+	changeSlide(i)
 })
-
-function Dot() {
-	
-	let i=0
-
-		DotSlide = document.querySelector(".dot");
-		DotSlide.classList.add("dot_selected");
 	
 
-	if(i+1) {
-		suivant()
-		DotSlide.classList.add("dot_selected");
-	}
-	
 
-	if (i-1) {
-		precedent()
-		DotSlide.classList.add("dot_selected")
-	}
+for (let j = 0; j < slides.length; j++) {
+
 	
-	
-	
-	
+    const dotElement = document.createElement("span");
+    dotElement.classList.add('dot');
+    dots.appendChild(dotElement);
+ 
 }
 
+function changeSlide(index) {
+   
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot) => dot.classList.remove('dot_selected'));
 
-
-
-
-
-
+    const dotElement = dots[index];
+    dotElement.classList.add('dot_selected');
+}
