@@ -75,8 +75,10 @@ for (let j = 0; j < slides.length; j++) {
  
 }
 
+changeSlide(0);
+
 function changeSlide(index) {
-   
+    
     const dots = document.querySelectorAll('.dot');
     dots.forEach((dot) => dot.classList.remove('dot_selected'));
 
